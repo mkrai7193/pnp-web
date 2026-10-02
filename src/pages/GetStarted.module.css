@@ -1,0 +1,74 @@
+.page {
+  background: var(--dark);
+  padding: 160px 0 108px;
+  min-height: 70vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.25s;
+}
+
+.card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+}
+
+.icon {
+  font-size: 44px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(26, 20, 0, 0.6);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.footNote {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 14px;
+  color: rgba(26, 20, 0, 0.6);
+}
+
+.footNote a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footNote a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

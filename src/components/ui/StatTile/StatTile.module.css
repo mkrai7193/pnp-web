@@ -1,0 +1,50 @@
+.tile {
+  position: relative;
+}
+
+.bar {
+  padding: 22px 20px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--bar-color, var(--blue));
+}
+
+.framed {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: left;
+}
+
+.value {
+  font-family: var(--font-head);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.framed .value {
+  font-size: 28px;
+}
+
+.label {
+  font-size: 12px;
+  color: rgba(26, 20, 0, 0.6);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.framed .label {
+  font-size: 11px;
+  color: rgba(26, 20, 0, 0.55);
+}

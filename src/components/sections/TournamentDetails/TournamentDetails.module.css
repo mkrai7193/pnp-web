@@ -1,0 +1,71 @@
+.tournament {
+  background: var(--dark2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: all 0.25s;
+}
+
+.card:hover {
+  border-color: var(--sky);
+  transform: translateY(-4px);
+}
+
+.icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.card h4 {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: rgba(26, 20, 0, 0.6);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-head);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 10px;
+  background: rgba(212, 160, 0, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(212, 160, 0, 0.3);
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

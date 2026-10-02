@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pnpsports-website",
+  "compatibility_date": "2026-08-21",
+  "main": "worker/index.js",
+  "vars": {
+    "WAITLIST_NOTIFY_TO": "pnpsports.in@gmail.com"
+  },
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  }
+}

@@ -1,0 +1,45 @@
+.appSec {
+  background: var(--dark2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.intro {
+  color: rgba(26, 20, 0, 0.6);
+  font-weight: 300;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.featureList {
+  list-style: none;
+  margin-top: 8px;
+}
+
+.featureItem {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.featureItem:last-child {
+  border-bottom: none;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

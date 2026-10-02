@@ -1,0 +1,38 @@
+/**
+ * Design tokens for the PNP Sports brand.
+ * Every component should read colors/fonts from these variables —
+ * never hardcode a hex value in component CSS. See GUIDELINES.md.
+ */
+:root {
+  /* Brand colors */
+  --blue: #1b3fab;
+  --blue-dark: #0d2580;
+  --blue-light: #2e58d8;
+  --green: #2a7d1a;
+  --green-dark: #1c5e12;
+  --green-light: #34a820;
+  --gold: #d4a000;
+  --gold-light: #e8b800;
+  --sky: #0e7ec0;
+  --sky-dark: #0a60a0;
+
+  /* Surfaces (the site uses a warm yellow surface stack, not pure white) */
+  --white: #ffffff;
+  --off-white: #fffdf0;
+  --dark: #ffee8c;
+  --dark2: #ffe84a;
+  --dark3: #ffd800;
+
+  /* Text */
+  --muted: #7a6a20;
+  --border: rgba(180, 150, 0, 0.18);
+  --text-main: #1a1400;
+
+  /* Typography */
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Lato', sans-serif;
+
+  /* Layout */
+  --container-max: 1160px;
+  --container-padding: 28px;
+}

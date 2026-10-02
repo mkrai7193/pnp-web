@@ -1,0 +1,272 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.glow {
+  position: absolute;
+  width: 260px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(42, 173, 39, 0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.phone {
+  width: 248px;
+  background: var(--dark3);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 40px;
+  padding: 18px;
+  position: relative;
+  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.notch {
+  width: 72px;
+  height: 22px;
+  background: var(--dark);
+  border-radius: 0 0 14px 14px;
+  margin: 0 auto 14px;
+}
+
+.screen {
+  background: var(--dark);
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.hdr {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hdrLogo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+.liveBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(232, 60, 50, 0.9);
+  border-radius: 10px;
+  padding: 3px 10px;
+  font-family: var(--font-head);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--white);
+}
+
+.liveDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--white);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.matchTitle {
+  background: var(--dark2);
+  padding: 12px 16px;
+  font-family: var(--font-head);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  text-align: center;
+}
+
+.teams {
+  padding: 16px 14px;
+}
+
+.teamRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.teamRow:last-child {
+  border-bottom: none;
+}
+
+.teamName {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+}
+
+.teamNote {
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.teamRight {
+  text-align: right;
+}
+
+.teamScore {
+  font-family: var(--font-head);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--green-light);
+  line-height: 1;
+}
+
+.teamScoreMuted {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.overs {
+  font-size: 9px;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 2px;
+}
+
+.vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+  font-size: 9px;
+  color: var(--gold);
+  font-family: var(--font-head);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.ballsSection {
+  padding: 12px 14px;
+  border-top: 1px solid var(--border);
+}
+
+.ballsLabel {
+  font-size: 9px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.balls {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.ball {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.bDot {
+  background: var(--dark2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.bRun {
+  background: rgba(27, 63, 171, 0.3);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+.bFour {
+  background: rgba(42, 173, 39, 0.25);
+  color: var(--green-light);
+  border: 1px solid var(--green);
+}
+.bSix {
+  background: var(--green);
+  color: var(--white);
+}
+.bWkt {
+  background: rgba(220, 50, 50, 0.3);
+  color: #ff6b6b;
+  border: 1px solid rgba(220, 50, 50, 0.5);
+}
+
+.crr {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-head);
+  font-size: 9px;
+  color: var(--muted);
+}
+
+.crrItem {
+  text-align: center;
+}
+
+.crrVal {
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 12px;
+  display: block;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0 6px;
+  border-top: 1px solid var(--border);
+  background: var(--dark2);
+}
+
+.navItem {
+  text-align: center;
+  font-size: 8px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.navItemActive {
+  color: var(--green-light);
+}
+
+.navIcon {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 2px;
+}

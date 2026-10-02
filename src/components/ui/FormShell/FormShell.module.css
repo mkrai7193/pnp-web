@@ -1,0 +1,64 @@
+.card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.card h3 {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(26, 20, 0, 0.6);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.formError {
+  background: rgba(220, 50, 50, 0.1);
+  border: 1px solid rgba(220, 50, 50, 0.35);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #b3261e;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.submit {
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+  background: var(--green);
+  border: none;
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--green-dark);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 680px) {
+  .card {
+    padding: 28px 20px;
+  }
+}

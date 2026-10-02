@@ -1,0 +1,6 @@
+# Copy to `.dev.vars` (gitignored) for local `wrangler dev` runs.
+# In production, set this with: wrangler secret put RESEND_API_KEY
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# Optional — defaults to info@pnpsports.in if unset (production is set via wrangler.jsonc's vars).
+WAITLIST_NOTIFY_TO=pnpsports.in@gmail.com

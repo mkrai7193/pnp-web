@@ -1,0 +1,76 @@
+.geoGroup {
+  margin-bottom: 20px;
+}
+
+.geoGroup > label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.geoButton {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 6px;
+  background: var(--white);
+  border: 1px dashed var(--blue);
+  color: var(--blue);
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 48px;
+}
+
+.geoButton:hover:not(:disabled) {
+  background: rgba(27, 63, 171, 0.08);
+}
+
+.geoButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.geoResult {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--green-dark);
+  font-weight: 600;
+}
+
+.geoHint {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.addressFields {
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(212, 160, 0, 0.08);
+  border: 1px solid rgba(212, 160, 0, 0.25);
+  border-radius: 8px;
+}
+
+.addressRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.addressRow > div {
+  min-width: 0;
+}
+
+@media (max-width: 560px) {
+  .addressRow {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,346 @@
+.card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+/* ── Step indicator ── */
+.stepIndicator {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 36px;
+  gap: 4px;
+  overflow-x: auto;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 64px;
+  text-align: center;
+}
+
+.stepDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--dark);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.stepActive .stepDot {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.stepDone .stepDot {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+
+.stepLabel {
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stepActive .stepLabel {
+  color: var(--blue);
+}
+
+.stepBody {
+  min-height: 200px;
+}
+
+/* ── Sport picker (Step 1) ── */
+.fieldLabel {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.required {
+  color: var(--gold);
+}
+
+.sportGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.sportOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--dark);
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sportOption:hover:not(:disabled) {
+  border-color: var(--blue);
+}
+
+.sportOptionActive {
+  border-color: var(--blue);
+  background: rgba(27, 63, 171, 0.1);
+  color: var(--blue);
+}
+
+.sportOption:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sportIcon {
+  font-size: 28px;
+}
+
+.sportDisabledTag {
+  font-size: 8px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.fieldError {
+  font-size: 12px;
+  color: #b3261e;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* ── Player rows (Step 3) ── */
+.playerRow {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.playerRowHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.removeBtn {
+  background: transparent;
+  border: none;
+  color: #b3261e;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 2px 6px;
+}
+
+.playerRowFields {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+}
+
+.playerRowFields input,
+.playerRowFields select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 14px;
+  min-height: 44px;
+  -webkit-appearance: none;
+}
+
+.playerRowError {
+  font-size: 11px;
+  color: #b3261e;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.addPlayerBtn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed var(--blue);
+  background: transparent;
+  color: var(--blue);
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addPlayerBtn:hover {
+  background: rgba(27, 63, 171, 0.08);
+}
+
+/* ── Review (Step 5) ── */
+.review dl {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px 16px;
+  margin-bottom: 24px;
+}
+
+.review dt {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.review dd {
+  font-size: 14px;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.reviewPlayersTitle {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.reviewPlayers {
+  list-style: none;
+}
+
+.reviewPlayers li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.reviewPlayers li span {
+  font-weight: 300;
+  color: rgba(26, 20, 0, 0.6);
+}
+
+/* ── Nav row + success ── */
+.navRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+.backBtn {
+  padding: 14px 24px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-main);
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nextBtn {
+  margin-left: auto;
+  padding: 14px 28px;
+  border-radius: 6px;
+  border: none;
+  background: var(--green);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nextBtn:hover {
+  background: var(--green-dark);
+}
+
+.successPanel {
+  background: rgba(42, 173, 39, 0.12);
+  border: 1px solid rgba(42, 173, 39, 0.35);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  color: var(--green-dark);
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 680px) {
+  .card {
+    padding: 24px 18px;
+  }
+  .sportGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .playerRowFields {
+    grid-template-columns: 1fr;
+  }
+  .review dl {
+    grid-template-columns: 1fr;
+  }
+  .stepLabel {
+    display: none;
+  }
+  .step {
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+  .stepIndicator {
+    justify-content: center;
+    gap: 10px;
+  }
+}

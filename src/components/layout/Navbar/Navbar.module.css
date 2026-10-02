@@ -1,0 +1,263 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  transition:
+    background 0.3s,
+    box-shadow 0.3s;
+  background: rgba(255, 238, 140, 0.97);
+  box-shadow: 0 2px 12px rgba(180, 150, 0, 0.15);
+}
+
+.scrolled {
+  backdrop-filter: blur(16px);
+  box-shadow: 0 2px 12px rgba(180, 150, 0, 0.18);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+}
+
+.links li {
+  flex-shrink: 0;
+}
+
+.links a {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(26, 20, 0, 0.65);
+  text-decoration: none;
+  transition: color 0.15s;
+  position: relative;
+}
+
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  transition: width 0.2s;
+}
+
+.links a:hover {
+  color: var(--blue);
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+/* ── "Onboard" dropdown ── */
+.dropdown {
+  position: relative;
+  /* Extends the hoverable area down into the gap before .dropdownPanel so
+     moving the cursor from trigger to panel doesn't lose :hover mid-way. */
+  padding-bottom: 14px;
+  margin-bottom: -14px;
+}
+
+.dropdownTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(26, 20, 0, 0.65);
+  transition: color 0.15s;
+}
+
+.dropdown:hover .dropdownTrigger,
+.dropdown:focus-within .dropdownTrigger {
+  color: var(--blue);
+}
+
+.dropdownPanel {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 4px);
+  transition:
+    opacity 0.15s,
+    transform 0.15s,
+    visibility 0.15s;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-top: 14px;
+  min-width: 200px;
+  background: #ffee8c;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(180, 150, 0, 0.2);
+  list-style: none;
+  padding: 8px;
+}
+
+.dropdown:hover .dropdownPanel,
+.dropdown:focus-within .dropdownPanel {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.dropdownPanel a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(26, 20, 0, 0.75);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.dropdownPanel a:hover {
+  background: rgba(27, 63, 171, 0.1);
+  color: var(--blue);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ctaOutline,
+.ctaPrimary {
+  padding: 10px 22px;
+  font-size: 12px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: transparent;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: #ffee8c;
+  border-bottom: 1px solid rgba(180, 150, 0, 0.18);
+  padding: 20px 28px;
+}
+
+.mobileMenu.open {
+  display: block;
+}
+
+.mobileMenu a {
+  display: block;
+  padding: 10px 0;
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(26, 20, 0, 0.75);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(180, 150, 0, 0.15);
+}
+
+.mobileMenu a:last-child {
+  border-bottom: none;
+}
+
+.mobileMenu a.mobileCta {
+  color: var(--green-light);
+}
+
+.mobileGroup {
+  border-bottom: 1px solid rgba(180, 150, 0, 0.15);
+  padding-bottom: 6px;
+}
+
+.mobileGroupLabel {
+  display: block;
+  padding: 10px 0 4px;
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.mobileMenu a.mobileSubLink {
+  padding: 8px 0 8px 16px;
+  border-bottom: none;
+  font-size: 12px;
+}
+
+@media (max-width: 1080px) {
+  .links,
+  .right {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
