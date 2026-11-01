@@ -1,7 +1,9 @@
 # pnp-web
 
-React + Vite website for PNP Sports Management LLP ([pnpsports.in](https://pnpsports.in)), served
-by a Cloudflare Worker (`worker/`, config in `wrangler.jsonc`).
+React + Vite website for PNP Sports Management LLP ([pnpsports.in](https://pnpsports.in)).
+In production nginx on the VM serves the build from `/opt/pnp-web/dist`, and `/api/*`
+goes to the `pnp-waitlist` service, which runs `worker/index.js` under Node
+(`wrangler.jsonc` is only for local `wrangler dev`).
 
 **Start here → [`GUIDELINES.md`](./GUIDELINES.md)** — design tokens, component conventions, SEO
 checklist, and what to do (and not do) when changing this repo.
