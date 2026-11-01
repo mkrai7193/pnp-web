@@ -54,26 +54,23 @@ jobs:
           echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      # nginx serves pnpsports.in straight from /opt/pnp-web/dist. The new
-      # build is unpacked next to it and swapped in with two renames, so a
-      # failed upload never leaves the live site half-written. The previous
-      # build is kept as dist.prev for a quick manual rollback.
-      - name: Ship build and swap
+      - name: Ship release and deploy
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
         run: |
           set -euo pipefail
           SSH="ssh -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts"
-          tar czf - -C dist . | $SSH "$DEPLOY_USER@$DEPLOY_HOST" '
-            set -euo pipefail
-            cd /opt/pnp-web
-            rm -rf dist.new && mkdir dist.new
-            tar xzf - -C dist.new
-            rm -rf dist.prev
-            mv dist dist.prev
-            mv dist.new dist
-          '
+          RELEASE_ID="$(date -u +%Y%m%d%H%M%S)-${GITHUB_SHA::8}"
+
+          echo "Creating release dir $RELEASE_ID"
+          $SSH "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p /opt/pnp-web/releases/$RELEASE_ID"
+
+          echo "Shipping build"
+          tar czf - -C dist . | $SSH "$DEPLOY_USER@$DEPLOY_HOST" "tar xzf - -C /opt/pnp-web/releases/$RELEASE_ID"
+
+          echo "Running remote deploy script"
+          $SSH "$DEPLOY_USER@$DEPLOY_HOST" "bash -s $RELEASE_ID" < deploy/deploy-remote.sh
 
       - name: Verify live site
         env:

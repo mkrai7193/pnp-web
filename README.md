@@ -1,7 +1,8 @@
 # pnp-web
 
 React + Vite website for PNP Sports Management LLP ([pnpsports.in](https://pnpsports.in)).
-In production nginx on the VM serves the build from `/opt/pnp-web/dist`, and `/api/*`
+In production nginx on the VM serves the build from `/opt/pnp-web/current` (a symlink into
+`releases/`, swapped by `deploy/deploy-remote.sh`), and `/api/*`
 goes to the `pnp-waitlist` service, which runs `worker/index.js` under Node
 (`wrangler.jsonc` is only for local `wrangler dev`).
 
